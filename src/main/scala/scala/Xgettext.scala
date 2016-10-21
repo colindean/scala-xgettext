@@ -179,7 +179,8 @@ msgstr ""
             builder.append("msgid " + msgid + "\n")
             msgidPluralo.map { msgidPlural =>
               builder.append(s"msgid_plural ${msgidPlural}\n")
-              builder.append("msgstr[0] \"\"" + "\n\n")
+              val msgstrs = 0.to(1).map(i => s"""msgstr[$i] """"" ).mkString("\n")
+              builder.append(msgstrs + "\n\n")
             }.getOrElse(builder.append("msgstr \"\"" + "\n\n"))
           }
 
