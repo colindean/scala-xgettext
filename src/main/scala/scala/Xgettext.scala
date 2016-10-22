@@ -178,7 +178,7 @@ msgstr ""
             if (msgctxto.isDefined) builder.append("msgctxt " + msgctxto.get + "\n")
             builder.append("msgid " + msgid + "\n")
             msgidPluralo.map { msgidPlural =>
-              builder.append(s"msgid_plural ${msgidPlural}\n")
+              builder.append(s"msgid_plural $msgidPlural\n")
               val msgstrs = 0.to(1).map(i => s"""msgstr[$i] """"" ).mkString("\n")
               builder.append(msgstrs + "\n\n")
             }.getOrElse(builder.append("msgstr \"\"" + "\n\n"))
